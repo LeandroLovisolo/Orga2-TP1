@@ -1,0 +1,1864 @@
+arbol 0, antesDePrunear:
+> node: 3810
+--> node: 6183
+  --> node: 1855
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+--------
+arbol 0, despuesDePrunear:
+> node: 3810
+--> node: 6183
+  --> node: 1855
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+--------
+arbol 4, antesDeMergear:
+> node: wga
+--> node: kddsmad
+  --> node: uhg
+--> node: cvrea
+--> node: bltefgb
+--------
+arbol 4, despuesDeMergear:
+> node: wlaemgd
+--> node: uhg
+--------
+arbol 2, antesDeMergear:
+> node: g
+--> node: tkapq
+  --> node: uubskl
+    --> node: rnubjmd
+  --> node: uwfcwsdx
+    --> node: bbc
+--> node: rv
+  --> node: kfcyl
+    --> node: daou
+--> node: e
+--------
+arbol 2, despuesDeMergear:
+> node: gkapq
+--> node: rv
+  --> node: kacul
+--> node: uubskl
+  --> node: rnubjmd
+--> node: uwfcwsdx
+  --> node: bbc
+--------
+arbol 3, antesDeMergear:
+> node: rlhwdr
+--> node: bklryvup
+--> node: siflcnop
+  --> node: ffxam
+  --> node: qrvigqtp
+    --> node: iyb
+  --> node: ljfqfrqm
+--> node: ksmwrhi
+  --> node: qsg
+--------
+arbol 3, despuesDeMergear:
+> node: rshwdhup
+--> node: ffxam
+--> node: qrvigqtp
+  --> node: iyb
+--> node: ljfqfrqm
+--> node: qsg
+--------
+arbol 4, antesDeMergear:
+> node: wlaemgd
+--> node: uhg
+--> node: utm
+--> node: wfiagp
+--------
+arbol 4, despuesDeMergear:
+> node: wfaampd
+--------
+arbol 1, antesDeMergear:
+> node: 6385
+--> node: 7840
+  --> node: 9855
+    --> node: 9908
+      --> node: 1775
+        --> node: 8508
+      --> node: 2455
+    --> node: 5057
+      --> node: 201
+      --> node: 8954
+--> node: 9862
+  --> node: 7396
+    --> node: 5082
+      --> node: 9383
+--> node: 7756
+--> node: 8600
+--------
+arbol 1, despuesDeMergear:
+> node: 21981
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+--> node: 8600
+--> node: 9855
+  --> node: 9908
+    --> node: 1775
+      --> node: 8508
+    --> node: 2455
+  --> node: 5057
+    --> node: 201
+    --> node: 8954
+--------
+arbol 2, antesDeMergear:
+> node: gkapq
+--> node: rv
+  --> node: kacul
+  --> node: beebjuon
+--> node: uubskl
+  --> node: rnubjmd
+  --> node: kbllkwb
+    --> node: occbfnp
+--> node: uwfcwsdx
+  --> node: bbc
+    --> node: mqxdq
+--------
+arbol 2, despuesDeMergear:
+> node: gwacqsdx
+--> node: recbluon
+--> node: rnubjmd
+--> node: kbllkwb
+  --> node: occbfnp
+--> node: bbc
+  --> node: mqxdq
+--------
+arbol 4, antesDeMergear:
+> node: wfaampd
+--> node: ttvmtim
+--------
+arbol 4, despuesDeMergear:
+> node: wtammid
+--------
+arbol 1, antesDeMergear:
+> node: 21981
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+--> node: 8600
+--> node: 9855
+  --> node: 9908
+    --> node: 1775
+      --> node: 8508
+      --> node: 2281
+        --> node: 329
+    --> node: 2455
+  --> node: 5057
+    --> node: 201
+    --> node: 8954
+    --> node: 8122
+--> node: 5015
+  --> node: 7697
+--> node: 5119
+--------
+arbol 1, despuesDeMergear:
+> node: 21981
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+--> node: 8600
+--> node: 19763
+  --> node: 5057
+    --> node: 201
+    --> node: 8954
+    --> node: 8122
+  --> node: 1775
+    --> node: 8508
+    --> node: 2281
+      --> node: 329
+  --> node: 2455
+--> node: 5015
+  --> node: 7697
+--> node: 5119
+--------
+arbol 2, antesDeMergear:
+> node: gwacqsdx
+--> node: recbluon
+  --> node: ikgwhxe
+--> node: rnubjmd
+  --> node: mjsym
+  --> node: alje
+  --> node: owsnogo
+--> node: kbllkwb
+  --> node: occbfnp
+--> node: bbc
+  --> node: mqxdq
+--------
+arbol 2, despuesDeMergear:
+> node: gnabqmdn
+--> node: kclbknb
+--> node: bbc
+  --> node: mqxdq
+--> node: ikgwhxe
+--> node: mjsym
+--> node: alje
+--> node: owsnogo
+--------
+arbol 1, antesDePrunear:
+> node: 21981
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+--> node: 8600
+--> node: 19763
+  --> node: 5057
+    --> node: 201
+    --> node: 8954
+    --> node: 8122
+  --> node: 1775
+    --> node: 8508
+    --> node: 2281
+      --> node: 329
+  --> node: 2455
+--> node: 5015
+  --> node: 7697
+--> node: 5119
+--------
+arbol 1, despuesDePrunear:
+> node: 21981
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+--> node: 8600
+--> node: 19763
+  --> node: 5057
+    --> node: 201
+    --> node: 8954
+    --> node: 8122
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+  --> node: 2455
+--> node: 5015
+  --> node: 7697
+--> node: 5119
+--------
+arbol 3, antesDePrunear:
+> node: rshwdhup
+--> node: ffxam
+  --> node: qmbgtjye
+  --> node: yjx
+  --> node: pkngy
+--> node: qrvigqtp
+  --> node: iyb
+    --> node: ht
+      --> node: d
+  --> node: st
+    --> node: xir
+--> node: ljfqfrqm
+  --> node: vtddeueyx
+  --> node: asaveyau
+--> node: qsg
+--------
+arbol 3, despuesDePrunear:
+> node: rshwdhup
+--> node: ljfqfrqm
+--> node: qsg
+--------
+arbol 0, antesDePrunear:
+> node: 3810
+--> node: 6183
+  --> node: 1855
+    --> node: 2715
+      --> node: 717
+        --> node: 4676
+      --> node: 3550
+    --> node: 8702
+      --> node: 3175
+  --> node: 2860
+    --> node: 7806
+  --> node: 1029
+    --> node: 432
+      --> node: 4472
+--> node: 2594
+--> node: 4540
+  --> node: 7743
+  --> node: 3066
+--> node: 8689
+--------
+arbol 0, despuesDePrunear:
+> node: 3810
+--> node: 6183
+  --> node: 1855
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+    --> node: 8702
+      --> node: 3175
+  --> node: 1029
+--> node: 2594
+--> node: 8689
+--------
+arbol 3, antesDeMergear:
+> node: rshwdhup
+--> node: ljfqfrqm
+  --> node: aevq
+    --> node: npkj
+      --> node: stdpwbh
+--> node: qsg
+  --> node: v
+    --> node: mjbookp
+  --> node: rbvowtuud
+--------
+arbol 3, despuesDeMergear:
+> node: rshwdhup
+--> node: lefqfrqm
+  --> node: npkj
+    --> node: stdpwbh
+--> node: qbgowtuud
+  --> node: vjbookp
+--------
+arbol 1, antesDeMergear:
+> node: 21981
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+    --> node: 8982
+--> node: 8600
+  --> node: 9017
+    --> node: 8911
+--> node: 19763
+  --> node: 5057
+    --> node: 201
+      --> node: 1389
+    --> node: 8954
+    --> node: 8122
+    --> node: 6779
+      --> node: 6937
+        --> node: 6463
+          --> node: 2400
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+      --> node: 6633
+  --> node: 2455
+--> node: 5015
+  --> node: 7697
+  --> node: 5435
+--> node: 5119
+--> node: 6420
+--------
+arbol 1, despuesDeMergear:
+> node: 28401
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+    --> node: 8982
+--> node: 8600
+  --> node: 9017
+    --> node: 8911
+--> node: 19763
+  --> node: 5057
+    --> node: 201
+      --> node: 1389
+    --> node: 8954
+    --> node: 8122
+    --> node: 6779
+      --> node: 6937
+        --> node: 8863
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+      --> node: 6633
+  --> node: 2455
+--> node: 5015
+  --> node: 7697
+  --> node: 5435
+--> node: 5119
+--------
+arbol 2, antesDeMergear:
+> node: gnabqmdn
+--> node: kclbknb
+--> node: bbc
+  --> node: mqxdq
+  --> node: wg
+--> node: ikgwhxe
+--> node: mjsym
+  --> node: ebajvsi
+    --> node: oxxcbogw
+      --> node: owv
+  --> node: lywkxq
+    --> node: pg
+--> node: alje
+--> node: owsnogo
+--> node: upfnahwj
+--> node: lus
+--------
+arbol 2, despuesDeMergear:
+> node: guanqhdj
+--> node: kclbknb
+--> node: bbc
+  --> node: mqxdq
+  --> node: wg
+--> node: mbsjmsi
+  --> node: lywkxq
+    --> node: pg
+  --> node: oxxcbogw
+    --> node: owv
+--------
+arbol 4, antesDePrunear:
+> node: wtammid
+--> node: tywencvcx
+  --> node: mboownabs
+  --> node: eqdbyss
+  --> node: aebgyimt
+  --> node: j
+--> node: wcpg
+  --> node: jh
+  --> node: gwb
+    --> node: ocpmtpwk
+--> node: lnryxq
+--------
+arbol 4, despuesDePrunear:
+> node: wtammid
+--> node: wcpg
+  --> node: jh
+  --> node: gwb
+--> node: lnryxq
+--------
+arbol 2, antesDePrunear:
+> node: guanqhdj
+--> node: kclbknb
+--> node: bbc
+  --> node: mqxdq
+  --> node: wg
+    --> node: cnveqmmnq
+--> node: mbsjmsi
+  --> node: lywkxq
+    --> node: pg
+  --> node: oxxcbogw
+    --> node: owv
+--------
+arbol 2, despuesDePrunear:
+> node: guanqhdj
+--> node: kclbknb
+--> node: bbc
+  --> node: mqxdq
+  --> node: wg
+--------
+arbol 4, antesDePrunear:
+> node: wtammid
+--> node: wcpg
+  --> node: jh
+  --> node: gwb
+--> node: lnryxq
+--------
+arbol 4, despuesDePrunear:
+> node: wtammid
+--> node: wcpg
+  --> node: jh
+  --> node: gwb
+--> node: lnryxq
+--------
+arbol 2, antesDePrunear:
+> node: guanqhdj
+--> node: kclbknb
+--> node: bbc
+  --> node: mqxdq
+  --> node: wg
+--------
+arbol 2, despuesDePrunear:
+> node: guanqhdj
+--> node: kclbknb
+--> node: bbc
+  --> node: mqxdq
+  --> node: wg
+--------
+arbol 3, antesDeMergear:
+> node: rshwdhup
+--> node: lefqfrqm
+  --> node: npkj
+    --> node: stdpwbh
+    --> node: topumesg
+  --> node: og
+--> node: qbgowtuud
+  --> node: vjbookp
+--------
+arbol 3, despuesDeMergear:
+> node: rbhodtuud
+--> node: npkj
+  --> node: stdpwbh
+  --> node: topumesg
+--> node: og
+--> node: vjbookp
+--------
+arbol 4, antesDePrunear:
+> node: wtammid
+--> node: wcpg
+  --> node: jh
+  --> node: gwb
+--> node: lnryxq
+--------
+arbol 4, despuesDePrunear:
+> node: wtammid
+--> node: wcpg
+  --> node: jh
+  --> node: gwb
+--> node: lnryxq
+--------
+arbol 0, antesDePrunear:
+> node: 3810
+--> node: 6183
+  --> node: 1855
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+    --> node: 8702
+      --> node: 3175
+    --> node: 7412
+      --> node: 8079
+        --> node: 4146
+    --> node: 3629
+  --> node: 1029
+    --> node: 1569
+--> node: 2594
+--> node: 8689
+  --> node: 2724
+    --> node: 7305
+--> node: 6519
+--------
+arbol 0, despuesDePrunear:
+> node: 3810
+--> node: 6183
+  --> node: 1855
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+    --> node: 8702
+      --> node: 3175
+    --> node: 3629
+  --> node: 1029
+    --> node: 1569
+--> node: 2594
+--> node: 8689
+--> node: 6519
+--------
+arbol 3, antesDeMergear:
+> node: rbhodtuud
+--> node: npkj
+  --> node: stdpwbh
+  --> node: topumesg
+    --> node: uppyef
+    --> node: dqxsoht
+  --> node: tdkrtyjmm
+--> node: og
+--> node: vjbookp
+--------
+arbol 3, despuesDeMergear:
+> node: rjhodkuud
+--> node: nokumesg
+  --> node: stdpwbh
+  --> node: tdkrtyjmm
+  --> node: uppyef
+  --> node: dqxsoht
+--------
+arbol 4, antesDePrunear:
+> node: wtammid
+--> node: wcpg
+  --> node: jh
+  --> node: gwb
+  --> node: dim
+  --> node: btgpwrl
+--> node: lnryxq
+--> node: jsx
+--------
+arbol 4, despuesDePrunear:
+> node: wtammid
+--> node: wcpg
+  --> node: jh
+  --> node: gwb
+  --> node: btgpwrl
+--> node: lnryxq
+--> node: jsx
+--------
+arbol 2, antesDeMergear:
+> node: guanqhdj
+--> node: kclbknb
+--> node: bbc
+  --> node: mqxdq
+    --> node: jkbgyobml
+  --> node: wg
+  --> node: ra
+    --> node: gwpywb
+    --> node: yuenhs
+--> node: aqld
+  --> node: gfxjymoyt
+--> node: yfairjf
+--> node: t
+--------
+arbol 2, despuesDeMergear:
+> node: gfaiqjdj
+--> node: kclbknb
+--> node: bac
+  --> node: mkxgqobml
+  --> node: wg
+  --> node: gwpywb
+  --> node: yuenhs
+--> node: t
+--> node: gfxjymoyt
+--------
+arbol 2, antesDePrunear:
+> node: gfaiqjdj
+--> node: kclbknb
+  --> node: wxmokf
+  --> node: rrnxpbukc
+--> node: bac
+  --> node: mkxgqobml
+    --> node: beqwjmpj
+  --> node: wg
+  --> node: gwpywb
+  --> node: yuenhs
+--> node: t
+--> node: gfxjymoyt
+--------
+arbol 2, despuesDePrunear:
+> node: gfaiqjdj
+--> node: kclbknb
+--> node: t
+--------
+arbol 3, antesDeMergear:
+> node: rjhodkuud
+--> node: nokumesg
+  --> node: stdpwbh
+    --> node: f
+  --> node: tdkrtyjmm
+  --> node: uppyef
+  --> node: dqxsoht
+    --> node: rvuuatlff
+      --> node: sjcehxqb
+  --> node: wf
+    --> node: n
+--> node: ggr
+--------
+arbol 3, despuesDeMergear:
+> node: rohudeugd
+--> node: ggr
+--> node: stdpwbh
+  --> node: f
+--> node: tdkrtyjmm
+--> node: uppyef
+--> node: dqxsoht
+  --> node: rvuuatlff
+    --> node: sjcehxqb
+--> node: wf
+  --> node: n
+--------
+arbol 1, antesDeMergear:
+> node: 28401
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+    --> node: 8982
+      --> node: 1218
+        --> node: 5964
+--> node: 8600
+  --> node: 9017
+    --> node: 8911
+      --> node: 5770
+    --> node: 2980
+--> node: 19763
+  --> node: 5057
+    --> node: 201
+      --> node: 1389
+    --> node: 8954
+    --> node: 8122
+    --> node: 6779
+      --> node: 6937
+        --> node: 8863
+          --> node: 6724
+    --> node: 2428
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+      --> node: 6633
+      --> node: 3926
+  --> node: 2455
+  --> node: 278
+    --> node: 4922
+  --> node: 9819
+  --> node: 3680
+--> node: 5015
+  --> node: 7697
+  --> node: 5435
+--> node: 5119
+--------
+arbol 1, despuesDeMergear:
+> node: 28401
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+    --> node: 8982
+      --> node: 7182
+--> node: 8600
+  --> node: 11997
+    --> node: 8911
+      --> node: 5770
+--> node: 23443
+  --> node: 7485
+    --> node: 201
+      --> node: 1389
+    --> node: 8954
+    --> node: 8122
+    --> node: 6779
+      --> node: 6937
+        --> node: 15587
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+      --> node: 6633
+      --> node: 3926
+  --> node: 2455
+  --> node: 278
+    --> node: 4922
+  --> node: 9819
+--> node: 5015
+  --> node: 7697
+  --> node: 5435
+--> node: 5119
+--------
+arbol 2, antesDePrunear:
+> node: gfaiqjdj
+--> node: kclbknb
+--> node: t
+--------
+arbol 2, despuesDePrunear:
+> node: gfaiqjdj
+--> node: kclbknb
+--> node: t
+--------
+arbol 4, antesDeMergear:
+> node: wtammid
+--> node: wcpg
+  --> node: jh
+    --> node: pilnbrnq
+  --> node: gwb
+  --> node: btgpwrl
+    --> node: lcvijrft
+    --> node: nigk
+      --> node: svpivuqi
+  --> node: u
+--> node: lnryxq
+  --> node: tqfrlvb
+--> node: jsx
+--> node: mr
+--------
+arbol 4, despuesDeMergear:
+> node: wtammid
+--> node: wcpg
+  --> node: jilnbrnq
+  --> node: gwb
+  --> node: bigkwrlt
+    --> node: svpivuqi
+--> node: lnryxq
+  --> node: tqfrlvb
+--> node: jsx
+--> node: mr
+--------
+arbol 0, antesDePrunear:
+> node: 3810
+--> node: 6183
+  --> node: 1855
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+    --> node: 8702
+      --> node: 3175
+        --> node: 9148
+    --> node: 3629
+    --> node: 526
+  --> node: 1029
+    --> node: 1569
+      --> node: 2427
+      --> node: 7268
+  --> node: 9585
+  --> node: 1400
+--> node: 2594
+--> node: 8689
+--> node: 6519
+--------
+arbol 0, despuesDePrunear:
+> node: 3810
+--> node: 6183
+  --> node: 1855
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+    --> node: 8702
+      --> node: 3175
+    --> node: 3629
+    --> node: 526
+  --> node: 1029
+    --> node: 1569
+      --> node: 2427
+  --> node: 9585
+  --> node: 1400
+--> node: 2594
+--> node: 8689
+--> node: 6519
+--------
+arbol 1, antesDePrunear:
+> node: 28401
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+    --> node: 8982
+      --> node: 7182
+--> node: 8600
+  --> node: 11997
+    --> node: 8911
+      --> node: 5770
+--> node: 23443
+  --> node: 7485
+    --> node: 201
+      --> node: 1389
+    --> node: 8954
+    --> node: 8122
+    --> node: 6779
+      --> node: 6937
+        --> node: 15587
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+      --> node: 6633
+      --> node: 3926
+  --> node: 2455
+  --> node: 278
+    --> node: 4922
+  --> node: 9819
+--> node: 5015
+  --> node: 7697
+  --> node: 5435
+--> node: 5119
+--------
+arbol 1, despuesDePrunear:
+> node: 28401
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+    --> node: 8982
+      --> node: 7182
+--> node: 8600
+  --> node: 11997
+    --> node: 8911
+      --> node: 5770
+--> node: 23443
+  --> node: 7485
+    --> node: 201
+      --> node: 1389
+    --> node: 8954
+    --> node: 8122
+    --> node: 6779
+      --> node: 6937
+        --> node: 15587
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+      --> node: 6633
+      --> node: 3926
+  --> node: 2455
+  --> node: 278
+    --> node: 4922
+  --> node: 9819
+--> node: 5015
+  --> node: 7697
+  --> node: 5435
+--> node: 5119
+--------
+arbol 1, antesDeMergear:
+> node: 28401
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+    --> node: 8982
+      --> node: 7182
+--> node: 8600
+  --> node: 11997
+    --> node: 8911
+      --> node: 5770
+--> node: 23443
+  --> node: 7485
+    --> node: 201
+      --> node: 1389
+    --> node: 8954
+    --> node: 8122
+    --> node: 6779
+      --> node: 6937
+        --> node: 15587
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+      --> node: 6633
+      --> node: 3926
+  --> node: 2455
+  --> node: 278
+    --> node: 4922
+  --> node: 9819
+--> node: 5015
+  --> node: 7697
+  --> node: 5435
+--> node: 5119
+--------
+arbol 1, despuesDeMergear:
+> node: 28401
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+    --> node: 8982
+      --> node: 7182
+--> node: 8600
+  --> node: 11997
+    --> node: 8911
+      --> node: 5770
+--> node: 23443
+  --> node: 7485
+    --> node: 201
+      --> node: 1389
+    --> node: 8954
+    --> node: 8122
+    --> node: 6779
+      --> node: 6937
+        --> node: 15587
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+      --> node: 6633
+      --> node: 3926
+  --> node: 2455
+  --> node: 278
+    --> node: 4922
+  --> node: 9819
+--> node: 5015
+  --> node: 7697
+  --> node: 5435
+--> node: 5119
+--------
+arbol 1, antesDePrunear:
+> node: 28401
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+    --> node: 8982
+      --> node: 7182
+    --> node: 9537
+--> node: 8600
+  --> node: 11997
+    --> node: 8911
+      --> node: 5770
+      --> node: 1206
+--> node: 23443
+  --> node: 7485
+    --> node: 201
+      --> node: 1389
+    --> node: 8954
+    --> node: 8122
+    --> node: 6779
+      --> node: 6937
+        --> node: 15587
+    --> node: 9783
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+      --> node: 6633
+      --> node: 3926
+  --> node: 2455
+  --> node: 278
+    --> node: 4922
+  --> node: 9819
+--> node: 5015
+  --> node: 7697
+  --> node: 5435
+--> node: 5119
+--------
+arbol 1, despuesDePrunear:
+> node: 28401
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+    --> node: 8982
+      --> node: 7182
+    --> node: 9537
+--> node: 8600
+  --> node: 11997
+    --> node: 8911
+      --> node: 5770
+      --> node: 1206
+--> node: 23443
+  --> node: 7485
+    --> node: 201
+      --> node: 1389
+    --> node: 8954
+    --> node: 8122
+    --> node: 6779
+      --> node: 6937
+        --> node: 15587
+    --> node: 9783
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+      --> node: 6633
+      --> node: 3926
+  --> node: 2455
+  --> node: 278
+    --> node: 4922
+  --> node: 9819
+--> node: 5015
+  --> node: 7697
+  --> node: 5435
+--> node: 5119
+--------
+arbol 2, antesDePrunear:
+> node: gfaiqjdj
+--> node: kclbknb
+  --> node: hltbh
+  --> node: yrqiqoid
+  --> node: vnhv
+--> node: t
+--------
+arbol 2, despuesDePrunear:
+> node: gfaiqjdj
+--> node: kclbknb
+  --> node: hltbh
+  --> node: vnhv
+--> node: t
+--------
+arbol 3, antesDePrunear:
+> node: rohudeugd
+--> node: ggr
+  --> node: f
+    --> node: bvqygkc
+--> node: stdpwbh
+  --> node: f
+--> node: tdkrtyjmm
+  --> node: hc
+--> node: uppyef
+  --> node: tud
+--> node: dqxsoht
+  --> node: rvuuatlff
+    --> node: sjcehxqb
+      --> node: mylts
+      --> node: jecja
+--> node: wf
+  --> node: n
+    --> node: ynr
+--> node: y
+--------
+arbol 3, despuesDePrunear:
+> node: rohudeugd
+--> node: ggr
+  --> node: f
+    --> node: bvqygkc
+--> node: stdpwbh
+  --> node: f
+--> node: tdkrtyjmm
+  --> node: hc
+--> node: wf
+  --> node: n
+    --> node: ynr
+--> node: y
+--------
+arbol 1, antesDePrunear:
+> node: 28401
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+    --> node: 8982
+      --> node: 7182
+    --> node: 9537
+--> node: 8600
+  --> node: 11997
+    --> node: 8911
+      --> node: 5770
+      --> node: 1206
+--> node: 23443
+  --> node: 7485
+    --> node: 201
+      --> node: 1389
+    --> node: 8954
+    --> node: 8122
+    --> node: 6779
+      --> node: 6937
+        --> node: 15587
+    --> node: 9783
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+      --> node: 6633
+      --> node: 3926
+    --> node: 9058
+  --> node: 2455
+  --> node: 278
+    --> node: 4922
+  --> node: 9819
+--> node: 5015
+  --> node: 7697
+  --> node: 5435
+--> node: 5119
+--------
+arbol 1, despuesDePrunear:
+> node: 28401
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+    --> node: 8982
+      --> node: 7182
+    --> node: 9537
+--> node: 8600
+  --> node: 11997
+    --> node: 8911
+      --> node: 5770
+      --> node: 1206
+--> node: 23443
+  --> node: 7485
+    --> node: 201
+      --> node: 1389
+    --> node: 8954
+    --> node: 8122
+    --> node: 6779
+      --> node: 6937
+        --> node: 15587
+    --> node: 9783
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+      --> node: 6633
+      --> node: 3926
+    --> node: 9058
+  --> node: 2455
+  --> node: 278
+    --> node: 4922
+  --> node: 9819
+--> node: 5015
+  --> node: 7697
+  --> node: 5435
+--> node: 5119
+--------
+arbol 3, antesDePrunear:
+> node: rohudeugd
+--> node: ggr
+  --> node: f
+    --> node: bvqygkc
+--> node: stdpwbh
+  --> node: f
+--> node: tdkrtyjmm
+  --> node: hc
+--> node: wf
+  --> node: n
+    --> node: ynr
+--> node: y
+--------
+arbol 3, despuesDePrunear:
+> node: rohudeugd
+--> node: ggr
+  --> node: f
+    --> node: bvqygkc
+--> node: stdpwbh
+  --> node: f
+--> node: tdkrtyjmm
+  --> node: hc
+--> node: wf
+  --> node: n
+    --> node: ynr
+--> node: y
+--------
+arbol 1, antesDePrunear:
+> node: 28401
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+    --> node: 8982
+      --> node: 7182
+    --> node: 9537
+--> node: 8600
+  --> node: 11997
+    --> node: 8911
+      --> node: 5770
+      --> node: 1206
+--> node: 23443
+  --> node: 7485
+    --> node: 201
+      --> node: 1389
+    --> node: 8954
+    --> node: 8122
+    --> node: 6779
+      --> node: 6937
+        --> node: 15587
+    --> node: 9783
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+      --> node: 6633
+      --> node: 3926
+    --> node: 9058
+  --> node: 2455
+  --> node: 278
+    --> node: 4922
+  --> node: 9819
+--> node: 5015
+  --> node: 7697
+  --> node: 5435
+--> node: 5119
+--------
+arbol 1, despuesDePrunear:
+> node: 28401
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+    --> node: 8982
+      --> node: 7182
+    --> node: 9537
+--> node: 8600
+  --> node: 11997
+    --> node: 8911
+      --> node: 5770
+      --> node: 1206
+--> node: 23443
+  --> node: 7485
+    --> node: 201
+      --> node: 1389
+    --> node: 8954
+    --> node: 8122
+    --> node: 6779
+      --> node: 6937
+        --> node: 15587
+    --> node: 9783
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+      --> node: 6633
+      --> node: 3926
+    --> node: 9058
+  --> node: 2455
+  --> node: 278
+    --> node: 4922
+  --> node: 9819
+--> node: 5015
+  --> node: 7697
+  --> node: 5435
+--> node: 5119
+--------
+arbol 0, antesDeMergear:
+> node: 3810
+--> node: 6183
+  --> node: 1855
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+    --> node: 8702
+      --> node: 3175
+    --> node: 3629
+    --> node: 526
+    --> node: 4736
+    --> node: 5829
+  --> node: 1029
+    --> node: 1569
+      --> node: 2427
+    --> node: 7650
+  --> node: 9585
+    --> node: 2915
+  --> node: 1400
+    --> node: 758
+      --> node: 3316
+        --> node: 8394
+      --> node: 4913
+    --> node: 7421
+    --> node: 656
+--> node: 2594
+--> node: 8689
+--> node: 6519
+--> node: 4786
+--------
+arbol 0, despuesDeMergear:
+> node: 3810
+--> node: 6183
+  --> node: 6591
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+    --> node: 8702
+      --> node: 3175
+    --> node: 3629
+    --> node: 526
+    --> node: 5829
+  --> node: 1029
+    --> node: 1569
+      --> node: 2427
+    --> node: 7650
+  --> node: 9585
+    --> node: 2915
+  --> node: 2056
+    --> node: 4074
+      --> node: 4913
+      --> node: 8394
+    --> node: 7421
+--> node: 2594
+--> node: 8689
+--> node: 6519
+--> node: 4786
+--------
+arbol 3, antesDePrunear:
+> node: rohudeugd
+--> node: ggr
+  --> node: f
+    --> node: bvqygkc
+  --> node: hbscwvhb
+--> node: stdpwbh
+  --> node: f
+--> node: tdkrtyjmm
+  --> node: hc
+  --> node: logli
+--> node: wf
+  --> node: n
+    --> node: ynr
+    --> node: fwisvbc
+  --> node: qsf
+    --> node: vh
+--> node: y
+--------
+arbol 3, despuesDePrunear:
+> node: rohudeugd
+--> node: ggr
+  --> node: f
+    --> node: bvqygkc
+  --> node: hbscwvhb
+--> node: stdpwbh
+  --> node: f
+--> node: tdkrtyjmm
+  --> node: hc
+--> node: wf
+  --> node: n
+    --> node: ynr
+  --> node: qsf
+    --> node: vh
+--> node: y
+--------
+arbol 1, destruyendoLoSiguiente:
+> node: 28401
+--> node: 17258
+  --> node: 5082
+    --> node: 9383
+      --> node: 7216
+    --> node: 8982
+      --> node: 7182
+    --> node: 9537
+      --> node: 9716
+--> node: 8600
+  --> node: 11997
+    --> node: 8911
+      --> node: 5770
+      --> node: 1206
+--> node: 23443
+  --> node: 7485
+    --> node: 201
+      --> node: 1389
+    --> node: 8954
+    --> node: 8122
+    --> node: 6779
+      --> node: 6937
+        --> node: 15587
+    --> node: 9783
+  --> node: 1775
+    --> node: 2281
+      --> node: 329
+      --> node: 6633
+      --> node: 3926
+    --> node: 9058
+  --> node: 2455
+  --> node: 278
+    --> node: 4922
+  --> node: 9819
+--> node: 5015
+  --> node: 7697
+  --> node: 5435
+--> node: 5119
+--------
+arbol 3, antesDePrunear:
+> node: rohudeugd
+--> node: ggr
+  --> node: f
+    --> node: bvqygkc
+  --> node: hbscwvhb
+--> node: stdpwbh
+  --> node: f
+--> node: tdkrtyjmm
+  --> node: hc
+--> node: wf
+  --> node: n
+    --> node: ynr
+  --> node: qsf
+    --> node: vh
+--> node: y
+--------
+arbol 3, despuesDePrunear:
+> node: rohudeugd
+--> node: ggr
+  --> node: f
+    --> node: bvqygkc
+  --> node: hbscwvhb
+--> node: stdpwbh
+  --> node: f
+--> node: tdkrtyjmm
+  --> node: hc
+--> node: wf
+  --> node: n
+    --> node: ynr
+  --> node: qsf
+    --> node: vh
+--> node: y
+--------
+arbol 0, antesDeMergear:
+> node: 3810
+--> node: 6183
+  --> node: 6591
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+    --> node: 8702
+      --> node: 3175
+    --> node: 3629
+    --> node: 526
+    --> node: 5829
+  --> node: 1029
+    --> node: 1569
+      --> node: 2427
+    --> node: 7650
+  --> node: 9585
+    --> node: 2915
+  --> node: 2056
+    --> node: 4074
+      --> node: 4913
+      --> node: 8394
+    --> node: 7421
+    --> node: 9918
+--> node: 2594
+--> node: 8689
+  --> node: 5605
+--> node: 6519
+--> node: 4786
+--------
+arbol 0, despuesDeMergear:
+> node: 3810
+--> node: 8239
+  --> node: 6591
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+    --> node: 8702
+      --> node: 3175
+    --> node: 3629
+    --> node: 526
+    --> node: 5829
+  --> node: 1029
+    --> node: 1569
+      --> node: 2427
+    --> node: 7650
+  --> node: 9585
+    --> node: 2915
+  --> node: 4074
+    --> node: 4913
+    --> node: 8394
+  --> node: 7421
+  --> node: 9918
+--> node: 2594
+--> node: 8689
+  --> node: 5605
+--> node: 6519
+--> node: 4786
+--------
+arbol 0, antesDeMergear:
+> node: 3810
+--> node: 8239
+  --> node: 6591
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+      --> node: 9822
+    --> node: 8702
+      --> node: 3175
+    --> node: 3629
+    --> node: 526
+    --> node: 5829
+  --> node: 1029
+    --> node: 1569
+      --> node: 2427
+    --> node: 7650
+  --> node: 9585
+    --> node: 2915
+  --> node: 4074
+    --> node: 4913
+    --> node: 8394
+  --> node: 7421
+  --> node: 9918
+--> node: 2594
+--> node: 8689
+  --> node: 5605
+--> node: 6519
+--> node: 4786
+--------
+arbol 0, despuesDeMergear:
+> node: 3810
+--> node: 8239
+  --> node: 6591
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+      --> node: 9822
+    --> node: 8702
+      --> node: 3175
+    --> node: 3629
+    --> node: 526
+    --> node: 5829
+  --> node: 1029
+    --> node: 1569
+      --> node: 2427
+    --> node: 7650
+  --> node: 9585
+    --> node: 2915
+  --> node: 4074
+    --> node: 4913
+    --> node: 8394
+  --> node: 7421
+  --> node: 9918
+--> node: 2594
+--> node: 8689
+  --> node: 5605
+--> node: 6519
+--> node: 4786
+--------
+arbol 3, destruyendoLoSiguiente:
+> node: rohudeugd
+--> node: ggr
+  --> node: f
+    --> node: bvqygkc
+  --> node: hbscwvhb
+    --> node: yuenmli
+  --> node: bhk
+--> node: stdpwbh
+  --> node: f
+--> node: tdkrtyjmm
+  --> node: hc
+--> node: wf
+  --> node: n
+    --> node: ynr
+  --> node: qsf
+    --> node: vh
+--> node: y
+--------
+arbol 0, antesDeMergear:
+> node: 3810
+--> node: 8239
+  --> node: 6591
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+      --> node: 9822
+    --> node: 8702
+      --> node: 3175
+    --> node: 3629
+    --> node: 526
+    --> node: 5829
+  --> node: 1029
+    --> node: 1569
+      --> node: 2427
+    --> node: 7650
+  --> node: 9585
+    --> node: 2915
+  --> node: 4074
+    --> node: 4913
+    --> node: 8394
+  --> node: 7421
+  --> node: 9918
+--> node: 2594
+--> node: 8689
+  --> node: 5605
+--> node: 6519
+--> node: 4786
+--------
+arbol 0, despuesDeMergear:
+> node: 3810
+--> node: 8239
+  --> node: 6591
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+      --> node: 9822
+    --> node: 8702
+      --> node: 3175
+    --> node: 3629
+    --> node: 526
+    --> node: 5829
+  --> node: 1029
+    --> node: 1569
+      --> node: 2427
+    --> node: 7650
+  --> node: 9585
+    --> node: 2915
+  --> node: 4074
+    --> node: 4913
+    --> node: 8394
+  --> node: 7421
+  --> node: 9918
+--> node: 2594
+--> node: 8689
+  --> node: 5605
+--> node: 6519
+--> node: 4786
+--------
+arbol 0, antesDeMergear:
+> node: 3810
+--> node: 8239
+  --> node: 6591
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+      --> node: 9822
+    --> node: 8702
+      --> node: 3175
+    --> node: 3629
+    --> node: 526
+    --> node: 5829
+  --> node: 1029
+    --> node: 1569
+      --> node: 2427
+    --> node: 7650
+  --> node: 9585
+    --> node: 2915
+  --> node: 4074
+    --> node: 4913
+    --> node: 8394
+  --> node: 7421
+  --> node: 9918
+--> node: 2594
+--> node: 8689
+  --> node: 5605
+--> node: 6519
+--> node: 4786
+--------
+arbol 0, despuesDeMergear:
+> node: 3810
+--> node: 8239
+  --> node: 6591
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+      --> node: 9822
+    --> node: 8702
+      --> node: 3175
+    --> node: 3629
+    --> node: 526
+    --> node: 5829
+  --> node: 1029
+    --> node: 1569
+      --> node: 2427
+    --> node: 7650
+  --> node: 9585
+    --> node: 2915
+  --> node: 4074
+    --> node: 4913
+    --> node: 8394
+  --> node: 7421
+  --> node: 9918
+--> node: 2594
+--> node: 8689
+  --> node: 5605
+--> node: 6519
+--> node: 4786
+--------
+arbol 0, antesDePrunear:
+> node: 3810
+--> node: 8239
+  --> node: 6591
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+      --> node: 9822
+    --> node: 8702
+      --> node: 3175
+    --> node: 3629
+    --> node: 526
+    --> node: 5829
+  --> node: 1029
+    --> node: 1569
+      --> node: 2427
+    --> node: 7650
+  --> node: 9585
+    --> node: 2915
+  --> node: 4074
+    --> node: 4913
+    --> node: 8394
+  --> node: 7421
+  --> node: 9918
+--> node: 2594
+--> node: 8689
+  --> node: 5605
+--> node: 6519
+--> node: 4786
+--------
+arbol 0, despuesDePrunear:
+> node: 3810
+--> node: 8239
+  --> node: 6591
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+      --> node: 9822
+    --> node: 8702
+      --> node: 3175
+    --> node: 3629
+    --> node: 526
+    --> node: 5829
+  --> node: 1029
+    --> node: 1569
+      --> node: 2427
+    --> node: 7650
+  --> node: 9585
+    --> node: 2915
+  --> node: 4074
+    --> node: 4913
+    --> node: 8394
+  --> node: 7421
+  --> node: 9918
+--> node: 2594
+--> node: 8689
+  --> node: 5605
+--> node: 6519
+--> node: 4786
+--------
+arbol 0, destruyendoLoSiguiente:
+> node: 3810
+--> node: 8239
+  --> node: 6591
+    --> node: 2715
+      --> node: 717
+      --> node: 3550
+      --> node: 9822
+    --> node: 8702
+      --> node: 3175
+    --> node: 3629
+    --> node: 526
+    --> node: 5829
+    --> node: 3693
+  --> node: 1029
+    --> node: 1569
+      --> node: 2427
+      --> node: 1525
+    --> node: 7650
+  --> node: 9585
+    --> node: 2915
+  --> node: 4074
+    --> node: 4913
+    --> node: 8394
+    --> node: 8636
+  --> node: 7421
+  --> node: 9918
+--> node: 2594
+--> node: 8689
+  --> node: 5605
+--> node: 6519
+--> node: 4786
+--------
+arbol 2, destruyendoLoSiguiente:
+> node: gfaiqjdj
+--> node: kclbknb
+  --> node: hltbh
+    --> node: efg
+      --> node: d
+    --> node: a
+    --> node: csnnrv
+      --> node: ejs
+  --> node: vnhv
+  --> node: fjxllnt
+--> node: t
+  --> node: xgduwkd
+--> node: iakhvqh
+--> node: jokfaq
+--------
+arbol 4, antesDeMergear:
+> node: wtammid
+--> node: wcpg
+  --> node: jilnbrnq
+  --> node: gwb
+    --> node: cg
+  --> node: bigkwrlt
+    --> node: svpivuqi
+      --> node: vhufji
+        --> node: dlkvwwx
+          --> node: fc
+        --> node: prlrequ
+    --> node: i
+    --> node: ggwhke
+  --> node: ttwmr
+    --> node: davwlde
+      --> node: fvq
+        --> node: gkbsp
+    --> node: kqqp
+--> node: lnryxq
+  --> node: tqfrlvb
+    --> node: chafedk
+  --> node: jaihbf
+--> node: jsx
+--> node: mr
+  --> node: emov
+--------
+arbol 4, despuesDeMergear:
+> node: wtammid
+--> node: wipkbrnt
+  --> node: gwb
+    --> node: cg
+  --> node: tawwrde
+    --> node: kqqp
+    --> node: fvq
+      --> node: gkbsp
+  --> node: svpivuqi
+    --> node: vhufji
+      --> node: dlkvwwx
+        --> node: fc
+      --> node: prlrequ
+  --> node: i
+  --> node: ggwhke
+--> node: larhxf
+  --> node: thffldb
+--> node: jsx
+--> node: mmov
+--------
+arbol 4, antesDePrunear:
+> node: wtammid
+--> node: wipkbrnt
+  --> node: gwb
+    --> node: cg
+    --> node: b
+  --> node: tawwrde
+    --> node: kqqp
+      --> node: bdnnf
+    --> node: fvq
+      --> node: gkbsp
+  --> node: svpivuqi
+    --> node: vhufji
+      --> node: dlkvwwx
+        --> node: fc
+          --> node: dcbaotxmj
+      --> node: prlrequ
+  --> node: i
+  --> node: ggwhke
+    --> node: dbkvbxd
+--> node: larhxf
+  --> node: thffldb
+--> node: jsx
+--> node: mmov
+--> node: fvfsnjou
+--------
+arbol 4, despuesDePrunear:
+> node: wtammid
+--> node: jsx
+--------
+arbol 4, destruyendoLoSiguiente:
+> node: wtammid
+--> node: jsx
+--> node: nr
+  --> node: nadhkosen
+--------

@@ -1,0 +1,6 @@
+
+10-04-2013:
+-----------
+Cambiamos tree.asm linea 43, section .text va sin ':'.
+Corregida la definicion de es_mayor_que_sesenta en el enunciado.
+Agregamos archivo de versiones.
