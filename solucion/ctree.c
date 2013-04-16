@@ -67,6 +67,8 @@ void tree_deep_delete(tree *self) {
         free(node);
         node = next;
     }
+    if(self->type == String) free(self->value.s);
+    free(self);
 }
 
 void tree_print_node(tree *node, int level, FILE *h) {
@@ -225,7 +227,7 @@ tree_value intercalar(tree* padre, tree *hijo) {
     }
     v.s[i] = 0;
 
-    //free(padre->value.s);
-    //free(hijo->value.s);
+    free(padre->value.s);
+    free(hijo->value.s);
     return v;
 }
