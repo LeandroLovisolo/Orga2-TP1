@@ -12,8 +12,8 @@ INCLUDE=-include /usr/include/errno.h
 test: $(OBJS) $(HEADS) test.o
 	 gcc $(INCLUDE) -o test $(EXTRAFLAGS) test.c $(OBJS)
 
-$(EXE): $(EXE).cpp $(OBJS) $(HEADS)
-	g++ $(INCLUDE) -o $@ $(EXTRACPPFLAGS) $< $(OBJS)
+$(EXE): $(EXE).cpp $(OBJS) $(COBJS) $(HEADS)
+	g++ $(INCLUDE) -o $@ $(EXTRACPPFLAGS) $< $(OBJS) $(COBJS)
 
 solc: $(EXE).cpp $(COBJS) $(HEADS)
 	g++ $(INCLUDE) -o $@ $(EXTRACPPFLAGS) $< $(COBJS)

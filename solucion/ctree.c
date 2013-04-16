@@ -4,43 +4,45 @@
 
 #include "tree.h"
 
-tree_value ival(int i) {
-    tree_value v;
-    v.i = i;
-    return v;
-}
 
-tree_value dval(double d) {
-    tree_value v;
-    v.d = d;
-    return v;
-}
+// tree_value ival(int i) {
+//     tree_value v;
+//     v.i = i;
+//     return v;
+// }
 
-tree_value sval(char *s) {
-    tree_value v;
-    v.s = s;
-    return v;
-}
+// tree_value dval(double d) {
+//     tree_value v;
+//     v.d = d;
+//     return v;
+// }
 
-tree* tree_create(tree_value value, tree_type type) {
-    tree* t = malloc(sizeof(tree));
-    t->children = NULL;
-    t->value = value;
-    t->type = type;
-    return t;
-}
+// tree_value sval(char *s) {
+//     tree_value v;
+//     v.s = s;
+//     return v;
+// }
 
-tree* tree_create_int(int value) {
-    return tree_create(ival(value), Integer);
-}
+// tree* tree_create(tree_value value, tree_type type) {
+//     tree* t = malloc(sizeof(tree));
+//     t->children = NULL;
+//     t->value = value;
+//     t->type = type;
+//     return t;
+// }
 
-tree* tree_create_double(double value) {
-    return tree_create(dval(value), Double);
-}
+// tree* tree_create_int(int value) {
+//     return tree_create(ival(value), Integer);
+// }
 
-tree* tree_create_string(char *str) {
-    return tree_create(sval(str), String);
-}
+// tree* tree_create_double(double value) {
+//     return tree_create(dval(value), Double);
+// }
+
+// tree* tree_create_string(char *str) {
+//     return tree_create(sval(str), String);
+// }
+
 
 void tree_add_child(tree *self, tree *element) {
     list_node *child = malloc(sizeof(list_node));
@@ -58,18 +60,18 @@ void tree_add_child(tree *self, tree *element) {
     }
 }
 
-void tree_deep_delete(tree *self) {
-    if(self == NULL) return;
-    list_node* node = self->children;
-    while(node != NULL) {
-        tree_deep_delete(node->element);
-        list_node* next = node->next;
-        free(node);
-        node = next;
-    }
-    if(self->type == String) free(self->value.s);
-    free(self);
-}
+// void tree_deep_delete(tree *self) {
+//     if(self == NULL) return;
+//     list_node* node = self->children;
+//     while(node != NULL) {
+//         tree_deep_delete(node->element);
+//         list_node* next = node->next;
+//         free(node);
+//         node = next;
+//     }
+//     if(self->type == String) free(self->value.s);
+//     free(self);
+// }
 
 void tree_print_node(tree *node, int level, FILE *h) {
     if(node == NULL) return;
