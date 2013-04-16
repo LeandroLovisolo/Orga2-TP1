@@ -2,3 +2,5 @@ solucion/tp1
 solucion/solc
 solucion/*.o
 tests/*.in.out
+.cproject
+.project
