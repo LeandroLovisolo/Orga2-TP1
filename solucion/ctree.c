@@ -44,21 +44,21 @@
 // }
 
 
-void tree_add_child(tree *self, tree *element) {
-    list_node *child = malloc(sizeof(list_node));
-    child->element = element;
-    child->next = NULL;
+// void tree_add_child(tree *self, tree *element) {
+//     list_node *child = malloc(sizeof(list_node));
+//     child->element = element;
+//     child->next = NULL;
 
-    if(self->children == NULL) {
-        self->children = child;
-    } else {
-        list_node *node = self->children;
-        while(node->next != NULL) {
-            node = node->next;
-        }
-        node->next = child;
-    }
-}
+//     if(self->children == NULL) {
+//         self->children = child;
+//     } else {
+//         list_node *node = self->children;
+//         while(node->next != NULL) {
+//             node = node->next;
+//         }
+//         node->next = child;
+//     }
+// }
 
 // void tree_deep_delete(tree *self) {
 //     if(self == NULL) return;

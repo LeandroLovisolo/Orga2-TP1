@@ -148,7 +148,7 @@ tree_deep_delete:
 
     ; Me aseguro que el árbol no sea nulo
     cmp r12, NULL
-    je delete_end
+    je fin_delete
 
     ; Recorro los nodos
     mov rsi, r12
@@ -194,7 +194,7 @@ liberar_arbol:
     call free
     add rbp, 8
 
-delete_end:
+fin_delete:
     pop r15
     pop r14
     pop r13
@@ -203,9 +203,62 @@ delete_end:
     pop rbp
     ret
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ~ void tree_add_child(tree *self, tree *child)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+tree_add_child:
+    push rbp
+    mov rbp, rsp
+    push rbx
+    push r12
+    push r13
+    push r14
+    push r15
 
+    ; Guardo los parámetros
+    mov r12, rdi    ; self
+    mov r13, rsi    ; child
 
+    ; Armo el nuevo nodo
+    mov rdi, TAM_LIST_NODE
+    sub rsp, 8
+    call malloc
+    add rsp, 8
+    mov r14, rax     ; nuevo list_node
+    mov [r14 + OFFSET_ELEMENT], r13
+    mov qword [r14 + OFFSET_NEXT], NULL
+
+    ; Decido si self ya tiene hijos
+    cmp qword [r12 + OFFSET_CHILDREN], NULL
+    jne buscar_ultimo_hijo
+
+    ; Agrego el nuevo nodo como primer hijo
+    mov [r12 + OFFSET_CHILDREN], r14
+    jmp fin_add_child
+
+buscar_ultimo_hijo:
+    ; Comienzo el ciclo en el primer hijo de self
+    mov r15, [r12 + OFFSET_CHILDREN]
+
+ciclo_ultimo_hijo:
+    cmp qword [r15 + OFFSET_NEXT], NULL
+    je fin_ciclo_ultimo_hijo
+    mov r15, [r15 + OFFSET_NEXT]
+    jmp ciclo_ultimo_hijo
+
+fin_ciclo_ultimo_hijo:
+    ; Agrego el nuevo nodo luego del último hijo de self
+    mov [r15 + OFFSET_NEXT], r14
+
+fin_add_child:
+    pop r15
+    pop r14
+    pop r13
+    pop r12
+    pop rbx
+    pop rbp
+    ret
 
 
 ;; ~ auxiliar
@@ -217,10 +270,6 @@ delete_end:
 ;; ~ retorna un puntero al puntero final (el que apunta a null)
 ;;list_node_p* tree_last_children_pointer(tree *self)
 ;tree_last_children_pointer:
-;   ret
-;
-;; ~ void tree_add_child(tree *self, tree *child)
-;tree_add_child:
 ;   ret
 ;
 ;; ~ auxiliar
