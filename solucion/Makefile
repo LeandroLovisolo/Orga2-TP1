@@ -16,7 +16,7 @@ $(EXE): $(EXE).cpp $(OBJS) $(HEADS)
 	g++ $(INCLUDE) -o $@ $(EXTRACPPFLAGS) $< $(OBJS)
 
 solc: $(EXE).cpp $(COBJS) $(HEADS)
-	g++ $(INCLUDE) -o $@ $(EXTRACPPFLAGS) $< $(OBJS)
+	g++ $(INCLUDE) -o $@ $(EXTRACPPFLAGS) $< $(COBJS)
 
 %.o: %.asm
 	nasm $(NASMEXTRAFLAGS) -o $@ $<

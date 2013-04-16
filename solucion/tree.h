@@ -63,7 +63,7 @@ void  tree_add_child(tree *self, tree *element);
 tree* tree_children_at(tree *self, int position);
 
 void  tree_prune(tree *self, tree_bool_method method);
-tree* tree_merge(tree *self, tree_bool_method test_method, tree_value_method value_method);
+void tree_merge(tree *self, tree_bool_method test_method, tree_value_method value_method);
 
 void tree_print(tree *self, char *extra, char *archivo);
 
