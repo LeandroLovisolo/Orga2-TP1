@@ -102,13 +102,13 @@ void tree_print_node(tree *node, int level, FILE *h) {
     }
 }
 
-void tree_print(tree *self, char *extra, char *archivo) {
-    FILE* h = fopen(archivo, "a");
-    fprintf(h, "%s\n", extra);
-    tree_print_node(self, 0, h);
-    fprintf(h, "--------\n");
-    fclose(h);
-}
+// void tree_print(tree *self, char *extra, char *archivo) {
+//     FILE* h = fopen(archivo, "a");
+//     fprintf(h, "%s\n", extra);
+//     tree_print_node(self, 0, h);
+//     fprintf(h, "--------\n");
+//     fclose(h);
+// }
 
 void tree_prune(tree *self, tree_bool_method method) {
     list_node* prev = NULL;

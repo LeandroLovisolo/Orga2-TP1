@@ -1,5 +1,8 @@
 extern malloc
 extern free
+extern fopen
+extern fprintf
+extern fclose
 
 
 global tree_create
@@ -49,6 +52,15 @@ global intercalar
 
 
 section .data
+    tree_print_append:              DB 'a', 0
+    tree_print_extra:               DB '%s', 10, 0
+    tree_print_footer:              DB '--------', 10, 0
+    tree_print_prefijo_cero:        DB '> node: ', 0
+    tree_print_prefijo_margen:      DB '  ', 0
+    tree_print_prefijo_mayor_cero:  DB '--> node: ', 0
+    tree_print_node_int:            DB '%d', 10, 0
+    tree_print_node_double:         DB '%f', 10, 0
+    tree_print_node_string:         DB '%s', 10, 0
 
 
 section .text
@@ -142,6 +154,7 @@ tree_deep_delete:
     push r13
     push r14
     push r15
+    sub rsp, 8
 
     ; Guardo el puntero al árbol
     mov r12, rdi
@@ -162,18 +175,14 @@ ciclo_nodos:
     ; Destruyo el árbol del nodo
     mov rsi, r13
     mov rdi, [rsi + OFFSET_ELEMENT]
-    sub rbp, 8
     call tree_deep_delete
-    add rbp, 8
 
     ; Guardo el puntero al nodo siguiente
     ; y destruyo el nodo actual
     mov rdi, r13
     mov rsi, r13
     mov r13, [rsi + OFFSET_NEXT]
-    sub rbp, 8
     call free
-    add rbp, 8
 
     jmp ciclo_nodos
 
@@ -184,17 +193,14 @@ fin_ciclo_nodos:
     jne liberar_arbol
 
     mov rdi, [rsi + OFFSET_VALUE]
-    sub rbp, 8
     call free
-    add rbp, 8
 
 liberar_arbol:
     mov rdi, r12
-    sub rbp, 8
     call free
-    add rbp, 8
 
 fin_delete:
+    add rsp, 8
     pop r15
     pop r14
     pop r13
@@ -260,6 +266,170 @@ fin_add_child:
     pop rbp
     ret
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ~ void tree_print(tree *self, char* extra, char *archivo)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+tree_print:
+    push rbp
+    mov rbp, rsp
+    push rbx
+    push r12
+    push r13
+    push r14
+    push r15
+    sub rsp, 8
+
+    ; Guardo los parámetros
+    mov r12, rdi    ; self
+    mov r13, rsi    ; extra
+    mov r14, rdx    ; archivo
+
+    ; Abro el archivo
+    mov rdi, r14
+    mov rsi, tree_print_append
+    call fopen
+    mov r15, rax    ; handler
+
+    ; Imprimo mensaje extra
+    mov rdi, r15
+    mov rsi, tree_print_extra
+    mov rdx, r13
+    call fprintf
+
+    ; Imprimo el árbol
+    mov rdi, r12
+    mov rsi, 0
+    mov rdx, r15
+    call tree_print_node
+
+    ; Imprimo footer
+    mov rdi, r15
+    mov rsi, tree_print_footer
+    call fprintf
+
+    ; Cierro el archivo
+    mov rdi, r15
+    call fclose
+
+fin_tree_print:
+    add rsp, 8
+    pop r15
+    pop r14
+    pop r13
+    pop r12
+    pop rbx
+    pop rbp
+    ret
+
+; ~ auxiliar
+; ~ void tree_print_node(tree *node, int level, FILE *h)
+tree_print_node:
+    push rbp
+    mov rbp, rsp
+    push rbx
+    push r12
+    push r13
+    push r14
+    push r15
+    sub rsp, 8
+
+    ; Guardo los parámetros
+    mov r12, rdi    ; node
+    mov r13, rsi    ; level
+    mov r14, rdx    ; handler
+
+    ; Verifico que el árbol no sea nulo
+    cmp r12, NULL
+    je fin_tree_print_node
+
+    ; Genero el prefijo
+    cmp r13, 0
+    jne nivel_mayor_cero
+
+    ; Prefijo nivel cero
+    mov rdi, r14        
+    mov rsi, tree_print_prefijo_cero
+    call fprintf
+    jmp imprimir_nodo
+
+nivel_mayor_cero:
+    ; Imprimo el margen
+    mov rbx, 1
+
+ciclo_print_node:
+    cmp rbx, r13
+    jge fin_ciclo_print_node
+
+    mov rdi, r14
+    mov rsi, tree_print_prefijo_margen
+    call fprintf
+
+    inc rbx
+    jmp ciclo_print_node
+
+fin_ciclo_print_node:
+    ; Imprimo prefijo nivel > 0
+    mov rdi, r14
+    mov rsi, tree_print_prefijo_mayor_cero
+    call fprintf
+
+imprimir_nodo:
+    cmp dword [r12 + OFFSET_TYPE], ENUM_DOUBLE
+    je formato_double
+
+    cmp dword [r12 + OFFSET_TYPE], ENUM_STRING
+    je formato_string
+
+    ; Formato Integer
+    mov rdi, r14
+    mov rsi, tree_print_node_int
+    mov rdx, [r12 + OFFSET_VALUE]
+    jmp invocar_fprintf
+
+formato_double:
+    mov rdi, r14
+    mov rsi, tree_print_node_double
+    mov rbx, [r12 + OFFSET_VALUE]
+    mov xmm0, 0
+    jmp invocar_fprintf
+    
+formato_string:
+    mov rdi, r14
+    mov rsi, tree_print_node_string
+    mov rdx, [r12 + OFFSET_VALUE]   
+
+invocar_fprintf:
+    call fprintf
+
+    ; Me paro en el primer hijo
+    mov r15, [r12 + OFFSET_CHILDREN]
+
+    ; Recorro los hijos
+ciclo_imprimir_hijos:
+    cmp r15, NULL
+    je fin_tree_print_node
+
+    ; Imprimo el hijo actual
+    mov rdi, [r15 + OFFSET_ELEMENT]
+    mov rsi, r13
+    inc rsi
+    mov rdx, r14
+    call tree_print_node
+
+    ; Me muevo al siguiente hijo y repito
+    mov r15, [r15 + OFFSET_NEXT]
+    jmp ciclo_imprimir_hijos
+
+fin_tree_print_node:
+    add rsp, 8
+    pop r15
+    pop r14
+    pop r13
+    pop r12
+    pop rbx
+    pop rbp
+    ret
 
 ;; ~ auxiliar
 ;; ~ int tree_children_count(tree *self)
