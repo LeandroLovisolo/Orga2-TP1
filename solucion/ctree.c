@@ -73,34 +73,34 @@
 //     free(self);
 // }
 
-void tree_print_node(tree *node, int level, FILE *h) {
-    if(node == NULL) return;
-    if(level == 0) {
-        fprintf(h, "> ");
-    } else {
-        for(int i = 1; i < level; i++) {
-            fprintf(h, "  ");
-        }
-        fprintf(h, "--> ");
-    }
-    fprintf(h, "node: ");
-    switch(node->type) {
-        case Integer:
-            fprintf(h, "%d\n", node->value.i);
-            break;
-        case Double:
-            fprintf(h, "%f\n", node->value.d);
-            break;
-        case String:
-            fprintf(h, "%s\n", node->value.s);
-            break;
-    }
-    list_node* child = node->children;
-    while(child != NULL) {
-        tree_print_node(child->element, level + 1, h);
-        child = child->next;
-    }
-}
+// void tree_print_node(tree *node, int level, FILE *h) {
+//     if(node == NULL) return;
+//     if(level == 0) {
+//         fprintf(h, "> ");
+//     } else {
+//         for(int i = 1; i < level; i++) {
+//             fprintf(h, "  ");
+//         }
+//         fprintf(h, "--> ");
+//     }
+//     fprintf(h, "node: ");
+//     switch(node->type) {
+//         case Integer:
+//             fprintf(h, "%d\n", node->value.i);
+//             break;
+//         case Double:
+//             fprintf(h, "%f\n", node->value.d);
+//             break;
+//         case String:
+//             fprintf(h, "%s\n", node->value.s);
+//             break;
+//     }
+//     list_node* child = node->children;
+//     while(child != NULL) {
+//         tree_print_node(child->element, level + 1, h);
+//         child = child->next;
+//     }
+// }
 
 // void tree_print(tree *self, char *extra, char *archivo) {
 //     FILE* h = fopen(archivo, "a");
@@ -110,28 +110,28 @@ void tree_print_node(tree *node, int level, FILE *h) {
 //     fclose(h);
 // }
 
-void tree_prune(tree *self, tree_bool_method method) {
-    list_node* prev = NULL;
-    list_node* node = self->children;
+// void tree_prune(tree *self, tree_bool_method method) {
+//     list_node* prev = NULL;
+//     list_node* node = self->children;
 
-    while(node != NULL) {
-        if(method(node->element)) {
-            list_node* next = node->next;
-            tree_deep_delete(node->element);
-            free(node);
-            if(prev == NULL) {
-                self->children = next;
-            } else {
-                prev->next = next;
-            }
-            node = next;
-        } else {
-            tree_prune(node->element, method);
-            prev = node;
-            node = node->next;
-        }
-    }
-}
+//     while(node != NULL) {
+//         if(method(node->element)) {
+//             list_node* next = node->next;
+//             tree_deep_delete(node->element);
+//             free(node);
+//             if(prev == NULL) {
+//                 self->children = next;
+//             } else {
+//                 prev->next = next;
+//             }
+//             node = next;
+//         } else {
+//             tree_prune(node->element, method);
+//             prev = node;
+//             node = node->next;
+//         }
+//     }
+// }
 
 void tree_merge(tree *self, tree_bool_method test_method, tree_value_method value_method) {
     list_node* orphans = NULL;

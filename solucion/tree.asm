@@ -390,8 +390,7 @@ imprimir_nodo:
 formato_double:
     mov rdi, r14
     mov rsi, tree_print_node_double
-    mov rbx, [r12 + OFFSET_VALUE]
-    mov xmm0, 0
+    movupd xmm0, [r12 + OFFSET_VALUE]
     jmp invocar_fprintf
     
 formato_string:
@@ -431,6 +430,100 @@ fin_tree_print_node:
     pop rbp
     ret
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ~ void tree_prune(tree *self, tree_bool_method method)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+tree_prune:
+    push rbp
+    mov rbp, rsp
+    push rbx
+    push r12
+    push r13
+    push r14
+    push r15
+    sub rsp, 8
+
+    ; Guardo los parámetros
+    mov r12, rdi    ; self
+    mov r13, rsi    ; method
+
+    ; Punteros para navegar el árbol
+    mov r14, NULL                       ; nodo anterior = NULL
+    mov r15, [r12 + OFFSET_CHILDREN]    ; nodo actual = primer nodo
+
+ciclo_prune:
+    ; Loopeo mientras que el nodo actual no sea nulo
+    cmp r15, NULL
+    je fin_prune
+
+    ; Decido si hay que podar el nodo actual
+    mov rdi, [r15 + OFFSET_ELEMENT]
+    call r13
+    cmp rax, 0
+    je no_podar_nodo_actual
+
+    ;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;; Podar nodo actual ;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;
+
+    ; Puntero al nodo siguiente
+    mov rbx, [r15 + OFFSET_NEXT]
+
+    ; Destruyo árbol del nodo actual
+    mov rdi, [r15 + OFFSET_ELEMENT]
+    call tree_deep_delete
+
+    ; Libero memoria del nodo actual
+    mov rdi, r15
+    call free
+
+    ; Decido si había nodo anterior
+    cmp r14, NULL
+    je no_habia_nodo_anterior
+
+    ; Conecto nodo anterior con nodo siguiente
+    mov [r14 + OFFSET_NEXT], rbx
+
+    jmp fin_conectar_nodos
+
+no_habia_nodo_anterior:
+    ; Convierto el nodo siguiente en el primer hijo del árbol
+    mov [r12 + OFFSET_CHILDREN], rbx
+
+fin_conectar_nodos:
+    ; Avanzo al siguiente nodo
+    mov r15, rbx
+
+    jmp ciclo_prune
+
+no_podar_nodo_actual:
+
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;; No podar nodo actual ;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+    ; Inicio recursión sobre los hijos
+    mov rdi, [r15 + OFFSET_ELEMENT]
+    mov rsi, r13
+    call tree_prune
+
+    ; Avanzo al siguiente nodo
+    mov r14, r15                    ; nodo anterior = nodo actual
+    mov r15, [r15 + OFFSET_NEXT]    ; nodo actual = nodo siguiente
+
+    jmp ciclo_prune
+
+fin_prune:
+    add rsp, 8
+    pop r15
+    pop r14
+    pop r13
+    pop r12
+    pop rbx
+    pop rbp
+    ret
+
 ;; ~ auxiliar
 ;; ~ int tree_children_count(tree *self)
 ;tree_children_count:
@@ -459,11 +552,6 @@ fin_tree_print_node:
 ;; ~ auxiliar
 ;; ~ void list_node_deep_delete(list_node **node_pointer)
 ;list_node_deep_delete:
-;   ret
-;
-;
-;; ~ void tree_prune(tree *self, tree_bool_method method)
-;tree_prune:
 ;   ret
 ;
 ;; ~ auxiliar
