@@ -61,6 +61,7 @@ section .data
     tree_print_node_int:            DB '%d', 10, 0
     tree_print_node_double:         DB '%f', 10, 0
     tree_print_node_string:         DB '%s', 10, 0
+    sesenta:                        DQ 60.0
 
 
 section .text
@@ -731,6 +732,83 @@ fin_es_bisiesto:
     pop rbx
     pop rbp
     ret
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ~ boolean es_mayor_que_sesenta(tree *t);
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+es_mayor_que_sesenta:
+    push rbp
+    mov rbp, rsp
+
+    movsd xmm0, [rdi + OFFSET_VALUE]
+    cmplesd xmm0, [sesenta] ; valor <= 60
+    movq rax, xmm0          ; Cargo resultado de la comparación    
+    cmp rax, 0              ; Valdrá cero sii valor > 60
+    je mayor_que_sesenta
+    mov rax, 0
+    jmp fin_es_mayor_que_sesenta
+
+mayor_que_sesenta:
+    mov rax, 1    
+
+fin_es_mayor_que_sesenta:
+    pop rbp
+    ret
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ~ boolean tiene_vocales(tree *t);
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;tiene_vocales:
+;    push rbp
+;    mov rbp, rsp
+;    push rbx
+;
+;    pop rbx
+;    pop rbp
+;    ret
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ~ tree_value sumar(tree* padre, tree *hijo);
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;sumar:
+;    push rbp
+;    mov rbp, rsp
+;    push rbx
+;
+;    pop rbx
+;    pop rbp
+;    ret
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ~ tree_value multiplicar(tree* padre, tree *hijo);
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;multiplicar:
+;    push rbp
+;    mov rbp, rsp
+;    push rbx
+;
+;    pop rbx
+;    pop rbp
+;    ret
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ~ tree_value intercalar(tree* padre, tree *hijo);
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;intercalar:
+;    push rbp
+;    mov rbp, rsp
+;    push rbx
+;
+;    pop rbx
+;    pop rbp
+;    ret
+
 
 ;; ~ auxiliar
 ;; ~ int tree_children_count(tree *self)

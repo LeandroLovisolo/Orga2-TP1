@@ -182,9 +182,9 @@
 //     //return (t->value.i % 400 == 0) ||  ((t->value.i % 4   == 0) && (t->value.i % 100 != 0))
 // }
 
-boolean es_mayor_que_sesenta(tree *t) {
-    return t->value.d > 60.0;
-}
+// boolean es_mayor_que_sesenta(tree *t) {
+//     return t->value.d > 60.0;
+// }
 
 boolean tiene_vocales(tree *t) {
     return strchr(t->value.s, 'a') != NULL ||
