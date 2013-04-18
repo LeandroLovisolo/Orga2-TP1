@@ -186,49 +186,47 @@
 //     return t->value.d > 60.0;
 // }
 
-boolean tiene_vocales(tree *t) {
-    return strchr(t->value.s, 'a') != NULL ||
-           strchr(t->value.s, 'e') != NULL ||
-           strchr(t->value.s, 'i') != NULL ||
-           strchr(t->value.s, 'o') != NULL ||
-           strchr(t->value.s, 'u') != NULL ||
-           strchr(t->value.s, 'A') != NULL ||
-           strchr(t->value.s, 'E') != NULL ||
-           strchr(t->value.s, 'I') != NULL ||
-           strchr(t->value.s, 'O') != NULL ||
-           strchr(t->value.s, 'U') != NULL;
-}
+// boolean tiene_vocales(tree *t) {
+//     char* vocales = "aeiouAEIOU";
+//     int i;
+//     for(i = 0; i < 10; i++) {
+//         if(strchr(t->value.s, vocales[i]) != NULL) {
+//             return True;
+//         }
+//     }
+//     return False;
+// }
 
-tree_value sumar(tree* padre, tree *hijo) {
-    tree_value v;
-    v.i = padre->value.i + hijo->value.i;
-    return v;
-}
+// tree_value sumar(tree* padre, tree *hijo) {
+//     tree_value v;
+//     v.i = padre->value.i + hijo->value.i;
+//     return v;
+// }
 
-tree_value multiplicar(tree* padre, tree *hijo) {
-    tree_value v;
-    v.d = padre->value.d * hijo->value.d;
-    return v;
-}
+// tree_value multiplicar(tree* padre, tree *hijo) {
+//     tree_value v;
+//     v.d = padre->value.d * hijo->value.d;
+//     return v;
+// }
 
-tree_value intercalar(tree* padre, tree *hijo) {
-    int len = strlen(padre->value.s) > strlen(hijo->value.s) ?
-            strlen(padre->value.s) : strlen(hijo->value.s);
-    tree_value v;
-    v.s = malloc(len + 1);
-    int i;
-    for(i = 0; i < len; i++) {
-        if(i % 2 == 0) {
-            v.s[i] = i < strlen(padre->value.s) ?
-                    padre->value.s[i] : hijo->value.s[i];
-        } else {
-            v.s[i] = i < strlen(hijo->value.s) ?
-                    hijo->value.s[i] : padre->value.s[i];
-        }
-    }
-    v.s[i] = 0;
+// tree_value intercalar(tree* padre, tree *hijo) {
+//     int len = strlen(padre->value.s) > strlen(hijo->value.s) ?
+//             strlen(padre->value.s) : strlen(hijo->value.s);
+//     tree_value v;
+//     v.s = malloc(len + 1);
+//     int i;
+//     for(i = 0; i < len; i++) {
+//         if(i % 2 == 0) {
+//             v.s[i] = i < strlen(padre->value.s) ?
+//                     padre->value.s[i] : hijo->value.s[i];
+//         } else {
+//             v.s[i] = i < strlen(hijo->value.s) ?
+//                     hijo->value.s[i] : padre->value.s[i];
+//         }
+//     }
+//     v.s[i] = 0;
 
-    free(padre->value.s);
-    free(hijo->value.s);
-    return v;
-}
+//     free(padre->value.s);
+//     free(hijo->value.s);
+//     return v;
+// }

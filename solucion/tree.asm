@@ -3,6 +3,8 @@ extern free
 extern fopen
 extern fprintf
 extern fclose
+extern strchr
+extern strlen
 
 
 global tree_create
@@ -62,6 +64,7 @@ section .data
     tree_print_node_double:         DB '%f', 10, 0
     tree_print_node_string:         DB '%s', 10, 0
     sesenta:                        DQ 60.0
+    vocales:                        DB 'aeiouAEIOU'
 
 
 section .text
@@ -741,10 +744,10 @@ es_mayor_que_sesenta:
     push rbp
     mov rbp, rsp
 
-    movsd xmm0, [rdi + OFFSET_VALUE]
-    cmplesd xmm0, [sesenta] ; valor <= 60
-    movq rax, xmm0          ; Cargo resultado de la comparación    
-    cmp rax, 0              ; Valdrá cero sii valor > 60
+    movsd xmm0, [rdi + OFFSET_VALUE]    ; Extraigo el double
+    cmplesd xmm0, [sesenta]             ; Veo si es <= 60
+    movq rax, xmm0                      ; Cargo resultado de la comparación    
+    cmp rax, 0                          ; Valdrá cero sii es > 60
     je mayor_que_sesenta
     mov rax, 0
     jmp fin_es_mayor_que_sesenta
@@ -760,54 +763,209 @@ fin_es_mayor_que_sesenta:
 ; ~ boolean tiene_vocales(tree *t);
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;tiene_vocales:
-;    push rbp
-;    mov rbp, rsp
-;    push rbx
-;
-;    pop rbx
-;    pop rbp
-;    ret
+tiene_vocales:
+    push rbp
+    mov rbp, rsp
+    push rbx
+    push r12
+    push r13
 
+    ; Extraigo la string
+    mov rbx, [rdi + OFFSET_VALUE]
+
+    ; Flag que indica si encontré vocales
+    xor r12, r12
+
+    ; Itero sobre el arreglo de vocales
+    xor r13, r13                ; Me paro sobre la primer vocal
+ciclo_tiene_vocales:    
+    cmp r13, 10                 ; Termino el ciclo luego de recorrer
+    jge fin_tiene_vocales       ; todo el array de vocales
+
+    ; Verifico si la r13-ésima vocal está en la string
+    mov rdi, rbx
+    mov rsi, vocales
+    add rsi, r13
+    mov byte rsi, [rsi]
+    call strchr
+    cmp rax, NULL
+    je no_encontro_vocal
+
+    ; Si encontró una vocal, marco el flag y termino el ciclo
+    mov r12, 1
+    jmp fin_tiene_vocales
+
+no_encontro_vocal:
+    inc r13                     ; Paso a la siguiente vocal
+    jmp ciclo_tiene_vocales     
+
+fin_tiene_vocales:
+    mov rax, r12
+    pop r13
+    pop r12
+    pop rbx
+    pop rbp
+    ret
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; ~ tree_value sumar(tree* padre, tree *hijo);
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;sumar:
-;    push rbp
-;    mov rbp, rsp
-;    push rbx
-;
-;    pop rbx
-;    pop rbp
-;    ret
+sumar:
+    push rbp
+    mov rbp, rsp
+
+    xor rax, rax
+    mov eax, [rdi + OFFSET_VALUE]
+    mov ecx, [rsi + OFFSET_VALUE]
+    add eax, ecx
+
+    pop rbp
+    ret
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; ~ tree_value multiplicar(tree* padre, tree *hijo);
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;multiplicar:
-;    push rbp
-;    mov rbp, rsp
-;    push rbx
-;
-;    pop rbx
-;    pop rbp
-;    ret
+multiplicar:
+    push rbp
+    mov rbp, rsp
+    
+    movsd xmm0, [rdi + OFFSET_VALUE]
+    movsd xmm1, [rsi + OFFSET_VALUE]
+    mulsd xmm0, xmm1
+    movq rax, xmm0
+
+    pop rbp
+    ret
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; ~ tree_value intercalar(tree* padre, tree *hijo);
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;intercalar:
-;    push rbp
-;    mov rbp, rsp
-;    push rbx
-;
-;    pop rbx
-;    pop rbp
-;    ret
+; Variable local: longitud del string devuelto
+%define longitud_nuevo_string [rbp - 48]
+
+intercalar:
+    push rbp
+    mov rbp, rsp
+    push rbx
+    push r12
+    push r13
+    push r14
+    push r15
+    sub rsp, 8
+
+    ; Guardo los strings de los árboles
+    mov r12, [rdi + OFFSET_VALUE]   ; Padre
+    mov r13, [rsi + OFFSET_VALUE]   ; Hijo
+
+    ; Obtengo longitud del string del padre
+    mov rdi, r12
+    call strlen
+    mov r14, rax                    ; Longitud string padre
+
+    ; Obtengo longitud del string del hijo
+    mov rdi, r13
+    call strlen
+    mov r15, rax                    ; Longitud string hijo
+
+    ; Guardo la longitud del string más largo
+    cmp r14, r15
+    jge string_padre_mayor
+    mov longitud_nuevo_string, r15
+    jmp reservar_string    
+string_padre_mayor:
+    mov longitud_nuevo_string, r14
+    
+reservar_string:
+    ; Reservo memoria para el nuevo string
+    mov rdi, longitud_nuevo_string
+    inc rdi                         ; Espacio para el cero al final del string
+    call malloc
+    mov rbx, rax                    ; Nuevo string
+
+    ; Itero sobre el nuevo string
+    xor rcx, rcx
+ciclo_string:
+    cmp rcx, longitud_nuevo_string
+    jge fin_ciclo_string
+
+    ; Decido la paridad del índice actual
+    xor rdx, rdx
+    mov rax, rcx
+    mov r8, 2
+    div r8
+    cmp rdx, 0
+    jne indice_impar
+
+    ;;;;;;;;;;;;;;;;;;
+    ;;; Índice par ;;;
+    ;;;;;;;;;;;;;;;;;;
+
+    ; Decido si el índice es superior a la longitud del string padre
+    cmp rcx, r14
+    jge mayor_que_string_padre
+
+    ; Guardo caracter en índice actual del padre
+    mov dl, [r12 + rcx]
+    mov [rbx + rcx], dl
+    jmp siguiente_iteracion
+
+mayor_que_string_padre:
+    ; Guardo caracter en índice actual del hijo
+    mov dl, [r13 + rcx]
+    mov [rbx + rcx], dl
+    jmp siguiente_iteracion
+
+indice_impar:
+
+    ;;;;;;;;;;;;;;;;;;;;
+    ;;; Índice impar ;;;
+    ;;;;;;;;;;;;;;;;;;;;
+
+    ; Decido si el índice es superior a la longitud del string padre
+    cmp rcx, r15
+    jge mayor_que_string_hijo
+
+    ; Guardo caracter en índice actual del hijo
+    mov dl, [r13 + rcx]
+    mov [rbx + rcx], dl
+    jmp siguiente_iteracion
+
+mayor_que_string_hijo:
+    ; Guardo caracter en índice actual del padre
+    mov dl, [r12 + rcx]
+    mov [rbx + rcx], dl
+
+siguiente_iteracion:
+    inc rcx
+    jmp ciclo_string
+
+fin_ciclo_string:
+    
+    ; Agrego cero al final del string
+    mov byte [rbx + rcx], 0
+
+    ; Libero string del padre
+    mov rdi, r12
+    call free
+
+    ; Libero string del hijo
+    mov rdi, r13
+    call free
+
+    ; Devuelvo nuevo string
+    mov rax, rbx
+
+    add rsp, 8
+    pop r15
+    pop r14
+    pop r13
+    pop r12
+    pop rbx
+    pop rbp
+    ret
 
 
 ;; ~ auxiliar
