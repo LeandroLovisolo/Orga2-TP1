@@ -524,6 +524,149 @@ fin_prune:
     pop rbp
     ret
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ~ tree* tree_merge(tree *self, tree_bool_method test_method, tree_value_method value_method)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Variable local: puntero a lista de huérfanos
+%define orphans [rbp - 48]
+
+tree_merge:
+    push rbp
+    mov rbp, rsp
+    push rbx
+    push r12
+    push r13
+    push r14
+    push r15
+    sub rsp, 8
+
+    ; Guardo los parámetros
+    mov r12, rdi    ; self
+    mov r13, rsi    ; test_method
+    mov r14, rdx    ; value_method
+
+    ; Punteros para navegar el árbol
+    mov r15, NULL                       ; nodo anterior
+    mov rbx, [r12 + OFFSET_CHILDREN]    ; nodo actual
+
+    ; Inicializo lista de nodos huérfanos, donde voy a
+    ; almacenar los hijos de todos los nodos mergeados
+    mov rax, NULL
+    mov orphans, rax
+
+    ; Itero sobre los hijos del árbol
+ciclo_merge:
+    cmp rbx, NULL
+    je fin_ciclo_merge   
+
+    ; Decido si mergeo el nodo actual
+    mov rdi, [rbx + OFFSET_ELEMENT]     ; Árbol del nodo actual
+    call r13                            ; test_method
+    cmp rax, 0
+    je no_mergear_nodo_actual
+
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;; Mergear nodo actual ;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+    ; Obtengo el nuevo valor del nodo padre
+    mov rdi, r12
+    mov rsi, [rbx + OFFSET_ELEMENT]
+    call r14
+    mov [r12 + OFFSET_VALUE], rax
+
+    ; Determino dónde guardo los hijos del nodo
+    mov rax, orphans
+    cmp rax, NULL
+    je no_hay_huerfanos
+
+    ; Los guardo al final de la lista de huérfanos
+    mov rax, orphans                    ; Me paro en el primer huérfano
+ciclo_huerfanos:
+    cmp qword [rax + OFFSET_NEXT], NULL ; Compruebo si es el último huérfano
+    je fin_ciclo_huerfanos              ; En caso afirmativo, termino el ciclo
+    mov rax, [rax + OFFSET_NEXT]        ; Avanzo al siguiente huérfano
+    jmp ciclo_huerfanos
+fin_ciclo_huerfanos:
+    mov rcx, [rbx + OFFSET_ELEMENT]     ; Obtengo árbol del nodo actual
+    mov rcx, [rcx + OFFSET_CHILDREN]    ; Obtengo su lista de hijos
+    mov [rax + OFFSET_NEXT], rcx        ; La agrego al final de la lista de huérfanos
+    jmp podar_nodo_actual
+
+no_hay_huerfanos:
+    ; Los convierto en la nueva lista de huérfanos
+    mov rax, [rbx + OFFSET_ELEMENT]     ; Obtengo el árbol del nodo actual
+    mov rax, [rax + OFFSET_CHILDREN]    ; Obtengo su lista de hijos
+    mov orphans, rax                    ; La convierto en la nueva lista de huérfanos
+
+podar_nodo_actual:
+    cmp r15, NULL                       ; Verifico si es el primer nodo del árbol
+    je es_primer_nodo                   ; Si lo es, apunto la lista de hijos del árbol al nodo siguiente
+
+    ; Si no lo es, conecto el elemento siguiente del nodo
+    ; anterior con el elemento siguiente del nodo actual
+    mov rax, [rbx + OFFSET_NEXT]        ; Obtengo el nodo siguiente al actual
+    mov [r15 + OFFSET_NEXT], rax        ; Lo asigno como nodo siguiente del nodo anterior
+    jmp liberar_nodo_y_arbol
+
+es_primer_nodo:
+    ; Apunto la lista de hijos del árbol al nodo siguiente
+    mov rax, [rbx + OFFSET_NEXT]        ; Obtengo el nodo siguiente al actual
+    mov [r12 + OFFSET_CHILDREN], rax    ; Lo asigno como primer hijo del árbol
+
+liberar_nodo_y_arbol:
+    mov rdi, [rbx + OFFSET_ELEMENT]     ; Libero el árbol del nodo actual
+    call free
+
+    mov rdi, rbx                        ; Guardo el nodo actual
+    mov rbx, [rbx + OFFSET_NEXT]        ; Avanzo al siguiente nodo
+    call free                           ; Libero el nodo actual
+    jmp ciclo_merge                     ; Repito el ciclo
+
+no_mergear_nodo_actual:
+
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;; No mergear nodo actual ;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+    ; Inicio recursión sobre los hijos
+    mov rdi, [rbx + OFFSET_ELEMENT]     ; self
+    mov rsi, r13                        ; test_method
+    mov rdx, r14                        ; value_method
+    call tree_merge
+
+    ; Avanzo al siguiente nodo y repito el ciclo
+    mov r15, rbx                    ; Guardo nodo actual como nodo anterior
+    mov rbx, [rbx + OFFSET_NEXT]    ; Avanzo al siguiente nodo
+    jmp ciclo_merge
+
+fin_ciclo_merge:
+    ; Decido dónde agrego los nodos huérfanos
+    cmp r15, NULL
+    je agregar_huerfanos_al_arbol
+
+    ; Agrego los nodos huérfanos luego del último hijo
+    mov rax, orphans
+    mov [r15 + OFFSET_NEXT], rax
+
+    jmp fin_tree_merge
+
+agregar_huerfanos_al_arbol:
+    ; Agrego los nodos huérfanos como hijos del árbol
+    mov rax, orphans
+    mov [r12 + OFFSET_CHILDREN], rax
+
+fin_tree_merge:
+    add rsp, 8
+    pop r15
+    pop r14
+    pop r13
+    pop r12
+    pop rbx
+    pop rbp
+    ret
+
 ;; ~ auxiliar
 ;; ~ int tree_children_count(tree *self)
 ;tree_children_count:

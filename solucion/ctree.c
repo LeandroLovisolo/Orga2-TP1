@@ -4,7 +4,6 @@
 
 #include "tree.h"
 
-
 // tree_value ival(int i) {
 //     tree_value v;
 //     v.i = i;
@@ -133,50 +132,50 @@
 //     }
 // }
 
-void tree_merge(tree *self, tree_bool_method test_method, tree_value_method value_method) {
-    list_node* orphans = NULL;
-    list_node* prev    = NULL;
-    list_node* node    = self->children;
+// void tree_merge(tree *self, tree_bool_method test_method, tree_value_method value_method) {
+//     list_node* orphans = NULL;
+//     list_node* prev    = NULL;
+//     list_node* node    = self->children;
     
-    while(node != NULL) {
-        if(test_method(node->element)) {
-            self->value = value_method(self, node->element);
+//     while(node != NULL) {
+//         if(test_method(node->element)) {
+//             self->value = value_method(self, node->element);
 
-            // Me guardo los hijos del nodo
-            if(orphans == NULL) {
-                orphans = node->element->children;
-            } else {
-                list_node* orphan = orphans;
-                while(orphan->next != NULL) orphan = orphan->next;
-                orphan->next = node->element->children;
-            }
+//             // Me guardo los hijos del nodo
+//             if(orphans == NULL) {
+//                 orphans = node->element->children;
+//             } else {
+//                 list_node* orphan = orphans;
+//                 while(orphan->next != NULL) orphan = orphan->next;
+//                 orphan->next = node->element->children;
+//             }
 
-            // Elimino el nodo de la lista de hijos del árbol
-            if(prev == NULL) {
-                self->children = node->next;
-            } else {
-                prev->next = node->next;
-            }
+//             // Elimino el nodo de la lista de hijos del árbol
+//             if(prev == NULL) {
+//                 self->children = node->next;
+//             } else {
+//                 prev->next = node->next;
+//             }
 
-            // Elimino el nodo y su árbol
-            list_node* next = node->next;
-            free(node->element);
-            free(node);
-            node = next;
-        } else {
-            tree_merge(node->element, test_method, value_method);
-            prev = node;
-            node = node->next;            
-        }
-    }
+//             // Elimino el nodo y su árbol
+//             list_node* next = node->next;
+//             free(node->element);
+//             free(node);
+//             node = next;
+//         } else {
+//             tree_merge(node->element, test_method, value_method);
+//             prev = node;
+//             node = node->next;            
+//         }
+//     }
 
-    // Agrego los huérfanos al final de la lista
-    if(prev == NULL) {
-        self->children = orphans;
-    } else {
-        prev->next = orphans;
-    }
-}
+//     // Agrego los huérfanos al final de la lista
+//     if(prev == NULL) {
+//         self->children = orphans;
+//     } else {
+//         prev->next = orphans;
+//     }
+// }
 
 boolean es_bisiesto(tree *t) {
     return (t->value.i % 4   == 0) && !((t->value.i % 100 == 0) && (t->value.i % 400 != 0));
