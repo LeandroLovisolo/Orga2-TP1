@@ -29,3 +29,14 @@ $(EJ2): $(EJ2).c $(EJ2_OBJS)
 
 clean:
 	rm -f $(EJ1) $(EJ2) *.o
+
+bundle:
+	mkdir -p tp1bundle
+	mkdir -p tp1bundle/solucion
+	mkdir -p tp1bundle/tests
+	cp ../enunciado-tp1.pdf ../versiones.txt tp1bundle
+	cp ../tests/*.in tp1bundle/tests
+	cp ../tests/*.catedra.out tp1bundle/tests
+	cp tree.asm tree.h tests.sh tp1.cpp main.c Makefile tp1bundle/solucion
+	tar -czf tp1.tar.gz tp1bundle
+	rm -rf tp1bundle
