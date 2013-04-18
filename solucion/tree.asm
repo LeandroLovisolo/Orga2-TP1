@@ -769,7 +769,7 @@ ciclo_tiene_vocales:
     mov rdi, rbx
     mov rsi, vocales
     add rsi, r13
-    mov byte rsi, [rsi]
+    mov rsi, [rsi]
     call strchr
     cmp rax, NULL
     je no_encontro_vocal
