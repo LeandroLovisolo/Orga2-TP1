@@ -88,10 +88,9 @@ tree_create:
     call malloc
 
     ; Completo la estructura
-    mov rsi, rax
-    mov qword [rsi + OFFSET_CHILDREN], NULL
-    mov [rsi + OFFSET_VALUE], r12
-    mov [rsi + OFFSET_TYPE], r13
+    mov qword [rax + OFFSET_CHILDREN], NULL
+    mov [rax + OFFSET_VALUE], r12
+    mov [rax + OFFSET_TYPE], r13
 
     pop r13
     pop r12
