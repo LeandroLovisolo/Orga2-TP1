@@ -155,8 +155,6 @@ tree_deep_delete:
     push rbx
     push r12
     push r13
-    push r14
-    push r15
     sub rsp, 8
 
     ; Guardo el puntero al árbol
@@ -167,8 +165,7 @@ tree_deep_delete:
     je fin_delete
 
     ; Recorro los nodos
-    mov rsi, r12
-    mov r13, [rsi + OFFSET_CHILDREN]
+    mov r13, [r12 + OFFSET_CHILDREN]
 
 ciclo_nodos:
     ; Termino el ciclo cuando llego al último nodo
@@ -176,26 +173,23 @@ ciclo_nodos:
     je fin_ciclo_nodos
 
     ; Destruyo el árbol del nodo
-    mov rsi, r13
-    mov rdi, [rsi + OFFSET_ELEMENT]
+    mov rdi, [r13 + OFFSET_ELEMENT]
     call tree_deep_delete
 
     ; Guardo el puntero al nodo siguiente
     ; y destruyo el nodo actual
     mov rdi, r13
-    mov rsi, r13
-    mov r13, [rsi + OFFSET_NEXT]
+    mov r13, [r13 + OFFSET_NEXT]
     call free
 
     jmp ciclo_nodos
 
 fin_ciclo_nodos:
     ; Si el tipo es String, libero la memoria
-    mov rsi, r12
-    cmp qword [rsi + OFFSET_TYPE], ENUM_STRING
+    cmp qword [r12 + OFFSET_TYPE], ENUM_STRING
     jne liberar_arbol
 
-    mov rdi, [rsi + OFFSET_VALUE]
+    mov rdi, [r12 + OFFSET_VALUE]
     call free
 
 liberar_arbol:
@@ -204,8 +198,6 @@ liberar_arbol:
 
 fin_delete:
     add rsp, 8
-    pop r15
-    pop r14
     pop r13
     pop r12
     pop rbx
