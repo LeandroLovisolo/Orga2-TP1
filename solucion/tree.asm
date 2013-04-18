@@ -211,7 +211,6 @@ fin_delete:
 tree_add_child:
     push rbp
     mov rbp, rsp
-    push rbx
     push r12
     push r13
     push r14
@@ -223,9 +222,7 @@ tree_add_child:
 
     ; Armo el nuevo nodo
     mov rdi, TAM_LIST_NODE
-    sub rsp, 8
     call malloc
-    add rsp, 8
     mov r14, rax     ; nuevo list_node
     mov [r14 + OFFSET_ELEMENT], r13
     mov qword [r14 + OFFSET_NEXT], NULL
@@ -257,7 +254,6 @@ fin_add_child:
     pop r14
     pop r13
     pop r12
-    pop rbx
     pop rbp
     ret
 
