@@ -122,6 +122,7 @@ tree_create_double:
     mov rbp, rsp
     sub rsp, 8
 
+    movq rdi, xmm0
     mov rsi, ENUM_DOUBLE
     call tree_create
 
