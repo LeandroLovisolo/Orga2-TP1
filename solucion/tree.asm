@@ -104,12 +104,12 @@ tree_create:
 tree_create_int:
     push rbp
     mov rbp, rsp
+    sub rsp, 8
 
     mov rsi, ENUM_INT
-    sub rsp, 8
     call tree_create
-    add rsp, 8
 
+    add rsp, 8
     pop rbp
     ret
 
@@ -120,12 +120,12 @@ tree_create_int:
 tree_create_double:
     push rbp
     mov rbp, rsp
+    sub rsp, 8
 
     mov rsi, ENUM_DOUBLE
-    sub rsp, 8
     call tree_create
-    add rsp, 8
 
+    add rsp, 8
     pop rbp
     ret
 
@@ -136,12 +136,12 @@ tree_create_double:
 tree_create_string:
     push rbp
     mov rbp, rsp
+    sub rsp, 8
 
     mov rsi, ENUM_STRING
-    sub rsp, 8
     call tree_create
-    add rsp, 8
 
+    add rsp, 8
     pop rbp
     ret
 
