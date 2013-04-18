@@ -1,5 +1,5 @@
 solucion/tp1
-solucion/solc
+solucion/main
 solucion/*.o
 tests/*.in.out
 .cproject
