@@ -667,6 +667,71 @@ fin_tree_merge:
     pop rbp
     ret
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ~ boolean es_bisiesto(tree *t);
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+es_bisiesto:
+    push rbp
+    mov rbp, rsp
+    push rbx
+
+    ; Devuelvo True si y sólo si:
+    ; (año % 4 == 0) && !((año % 100 == 0) && (año % 400 != 0))
+
+    ; Extraigo el año
+    mov ebx, [rdi + OFFSET_VALUE]
+
+    ; Computo año % 4 == 0
+    xor edx, edx
+    mov eax, ebx
+    mov edi, 4
+    div edi
+    cmp edx, 0
+    jne no_es_bisiesto
+
+    ; Guardo (año % 100 == 0) en R8
+    xor edx, edx
+    mov eax, ebx
+    mov edi, 100
+    div edi
+    cmp edx, 0
+    je divisible_por_100
+    mov r8, 0
+    jmp dividir_por_400
+divisible_por_100:
+    mov r8, 1
+
+    ; Guardo (año % 400 != 0) en R9
+dividir_por_400:
+    xor edx, edx
+    mov eax, ebx
+    mov edi, 400
+    div edi
+    cmp edx, 0
+    je divisible_por_400
+    mov r9, 1
+    jmp computar_nand
+divisible_por_400:
+    mov r9, 0
+
+    ; Computo !((año % 100 == 0) && (año % 400 != 0)) en R9
+computar_nand:
+    and r8, r9
+    jnz no_es_bisiesto
+
+si_es_bisiesto:
+    mov rax, 1
+    jmp fin_es_bisiesto
+
+no_es_bisiesto:
+    mov rax, 0
+
+fin_es_bisiesto:
+    pop rbx
+    pop rbp
+    ret
+
 ;; ~ auxiliar
 ;; ~ int tree_children_count(tree *self)
 ;tree_children_count:
@@ -717,10 +782,6 @@ fin_tree_merge:
 ;
 ;; ~ tree* tree_merge(tree *self, tree_bool_method test_method, tree_value_method value_method)
 ;tree_merge:
-;   ret
-;
-;; ~ boolean es_bisiesto(tree *t);
-;es_bisiesto:
 ;   ret
 ;
 ;
