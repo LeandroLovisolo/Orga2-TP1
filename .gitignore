@@ -1,6 +1,7 @@
 solucion/tp1
 solucion/main
 solucion/*.o
+solucion/tp1.tar.gz
 tests/*.in.out
 .cproject
 .project
