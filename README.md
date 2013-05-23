@@ -12,7 +12,7 @@ Universidad de Buenos Aires.
 Alumno
 ------
 
-Leandro Lovisolo (LU 645/11) [leandro@leandro.me](leandro@leandro.me)
+Leandro Lovisolo (LU 645/11) [leandro@leandro.me](mailto:leandro@leandro.me)
 
 Instrucciones
 -------------
